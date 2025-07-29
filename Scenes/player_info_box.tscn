@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1sey1p7b06b6"]
+
+[ext_resource type="Texture2D" uid="uid://boikxwpolv1qy" path="res://Assets/UI/DALL·E 2025-02-27 15.51.26 - An anime-style male character with long red hair and a small scar on his face. He has a confident and determined expression. He wears a dark, stylish .webp" id="1_25apw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nikt0"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eks3m"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 5
+shadow_offset = Vector2(0, 1.35)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rhcj"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Enemy_info_box" type="Panel"]
+offset_right = 256.0
+offset_bottom = 81.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nikt0")
+
+[node name="Avaar Frame" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = -31.5
+offset_right = 83.0
+offset_bottom = 30.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eks3m")
+
+[node name="Avatar" type="TextureRect" parent="Avaar Frame"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.145
+anchor_top = 0.161
+anchor_right = 0.826
+anchor_bottom = 0.903
+offset_left = -2.005
+offset_top = -2.982
+offset_right = 0.0059967
+offset_bottom = 0.0139961
+texture = ExtResource("1_25apw")
+expand_mode = 1
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 8.0
+offset_right = 142.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 20
+text = "Enemy
+"
+
+[node name="exp" type="ProgressBar" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -46.0
+offset_right = 119.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(10, 10)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_8rhcj")
+value = 45.0

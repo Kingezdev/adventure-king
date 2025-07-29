@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://0e5ygo04iexv"]
+
+[ext_resource type="Texture2D" uid="uid://bbqq6m53lmvay" path="res://Assets/UI/cards/Leia.png" id="1_j0wyq"]
+[ext_resource type="Script" uid="uid://co7yh6706hhbg" path="res://Scripts/leia.gd" id="1_vr6a2"]
+
+[node name="Leia" type="Control"]
+z_index = 2
+custom_minimum_size = Vector2(120, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 181.0
+offset_bottom = 229.0
+script = ExtResource("1_vr6a2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(180, 230)
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 121.0
+offset_bottom = 179.0
+texture = ExtResource("1_j0wyq")
+expand_mode = 1

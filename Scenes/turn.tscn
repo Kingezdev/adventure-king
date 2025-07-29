@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cixngepxrr4sh"]
+
+[ext_resource type="Texture2D" uid="uid://c462ygk3daasv" path="res://Assets/UI/Timer half.png" id="1_76h7p"]
+[ext_resource type="Texture2D" uid="uid://c6a2vf5861jeg" path="res://Assets/UI/Timer empty.png" id="2_yfh4q"]
+[ext_resource type="Texture2D" uid="uid://dtwv7guc34mli" path="res://Assets/UI/Timer full.png" id="3_4qp15"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h586t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_76h7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yfh4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4qp15")
+}],
+"loop": false,
+"name": &"end_turn",
+"speed": 7.0
+}]
+
+[node name="Turn" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h586t")
+animation = &"end_turn"

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://wv5bslnrc75u"]
+
+[ext_resource type="Texture2D" uid="uid://b4i4earrbyicf" path="res://Assets/UI/run-sports-runner-svgrepo-com.png" id="1_qllc4"]
+
+[node name="Run_away" type="Button"]
+offset_left = 1054.0
+offset_top = 533.0
+offset_right = 1151.0
+offset_bottom = 651.0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 95.0
+offset_bottom = 120.0
+texture = ExtResource("1_qllc4")
+expand_mode = 1

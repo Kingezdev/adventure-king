@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1vujv2611iqn"]
+
+[ext_resource type="Script" uid="uid://bo6x7gl6eftge" path="res://Scripts/zed_card.gd" id="1_cewc0"]
+[ext_resource type="Texture2D" uid="uid://jexhyjvquwo8" path="res://Assets/UI/cards/Zed.png" id="1_o6lfh"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(120, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 180.0
+offset_bottom = 232.0
+script = ExtResource("1_cewc0")
+
+[node name="card_ui" type="TextureRect" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(180, 230)
+layout_mode = 0
+offset_left = -1.0
+offset_right = 119.0
+offset_bottom = 180.0
+texture = ExtResource("1_o6lfh")
+expand_mode = 1

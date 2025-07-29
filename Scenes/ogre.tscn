@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://daf7xuijben1o"]
+
+[ext_resource type="Texture2D" uid="uid://besrvcnntx16h" path="res://Assets/NPC/Ogre.png" id="1_3blal"]
+[ext_resource type="Script" uid="uid://rv8hdehmo1wl" path="res://Scripts/ogre.gd" id="1_8jiyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j2he"]
+size = Vector2(206, 207)
+
+[node name="Ogre" type="Area2D"]
+script = ExtResource("1_8jiyc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(220, 250)
+offset_right = 200.0
+offset_bottom = 250.0
+texture = ExtResource("1_3blal")
+expand_mode = 1
+flip_h = true
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 2.0
+offset_top = 243.0
+offset_right = 209.0
+offset_bottom = 270.0
+max_value = 200.0
+value = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(105, 137.5)
+shape = SubResource("RectangleShape2D_4j2he")

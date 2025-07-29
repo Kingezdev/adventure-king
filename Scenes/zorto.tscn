@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://v3w3ycajm2mc"]
+
+[ext_resource type="Texture2D" uid="uid://bmlpfsh1jn0r2" path="res://Assets/UI/cards/Zorto.png" id="1_apv3m"]
+[ext_resource type="Script" uid="uid://b40rkk1margds" path="res://Scripts/zorto.gd" id="1_i0s44"]
+
+[node name="Zorto" type="Control"]
+z_index = 3
+custom_minimum_size = Vector2(120, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 110.0
+offset_bottom = 189.0
+script = ExtResource("1_i0s44")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 3
+custom_minimum_size = Vector2(180, 230)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.117
+anchor_right = 0.117
+offset_left = -13.04
+offset_top = 1.0
+offset_right = 106.96
+offset_bottom = 181.0
+texture = ExtResource("1_apv3m")
+expand_mode = 1

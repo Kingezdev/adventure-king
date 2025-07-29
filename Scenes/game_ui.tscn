@@ -1,0 +1,125 @@
+[gd_scene load_steps=16 format=3 uid="uid://c84s6b47i3q6r"]
+
+[ext_resource type="PackedScene" uid="uid://tl1xrbodvq0j" path="res://Scenes/deck.tscn" id="1_gek4i"]
+[ext_resource type="Texture2D" uid="uid://c38j8f2uofay3" path="res://Assets/UI/Hand.png" id="1_rxsu6"]
+[ext_resource type="Script" uid="uid://bniwm2bg6k742" path="res://Scripts/game_ui.gd" id="1_y8vuf"]
+[ext_resource type="Texture2D" uid="uid://dhd84d7iyptnd" path="res://Assets/UI/GrassBackground.png" id="2_74ohg"]
+[ext_resource type="Texture2D" uid="uid://b21srmsepd08w" path="res://Assets/Player/mc.png" id="3_xjnnq"]
+[ext_resource type="PackedScene" uid="uid://cw626ephi65wm" path="res://button.tscn" id="4_gjn1n"]
+[ext_resource type="PackedScene" uid="uid://wv5bslnrc75u" path="res://Scenes/run_away.tscn" id="4_x63ue"]
+[ext_resource type="PackedScene" uid="uid://b4746akm24qdp" path="res://Scenes/PlayerStats.tscn" id="7_3t1kc"]
+[ext_resource type="PackedScene" uid="uid://bojgbsnrx3fbi" path="res://Scenes/direwolf.tscn" id="9_1pjl6"]
+[ext_resource type="Script" uid="uid://m4cknno5dexp" path="res://Scripts/direwolf.gd" id="10_1pjl6"]
+[ext_resource type="PackedScene" uid="uid://wlaetoifbfnp" path="res://Scenes/dragon.tscn" id="11_cjtla"]
+[ext_resource type="Script" uid="uid://1365pq6nwtyu" path="res://Scripts/camera_2d.gd" id="12_74ohg"]
+
+[sub_resource type="Animation" id="Animation_74ohg"]
+resource_name = "Hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.58, 1.08, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(192, 365), Vector2(192, 360), Vector2(192, 355), Vector2(192, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_cjtla"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(192, 365)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btved"]
+_data = {
+&"Hover": SubResource("Animation_74ohg"),
+&"RESET": SubResource("Animation_cjtla")
+}
+
+[node name="Game UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_y8vuf")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 648.0
+texture = ExtResource("2_74ohg")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 359.0
+offset_right = 949.0
+offset_bottom = 604.0
+texture = ExtResource("1_rxsu6")
+expand_mode = 1
+
+[node name="Deck" parent="." instance=ExtResource("1_gek4i")]
+layout_mode = 1
+offset_left = 192.0
+offset_top = 365.0
+offset_right = 926.0
+offset_bottom = 595.0
+
+[node name="DeckHover" type="AnimationPlayer" parent="Deck"]
+libraries = {
+&"": SubResource("AnimationLibrary_btved")
+}
+autoplay = "Hover"
+
+[node name="MC" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 374.0
+offset_right = 198.0
+offset_bottom = 643.0
+texture = ExtResource("3_xjnnq")
+
+[node name="End_turn_button" parent="." instance=ExtResource("4_gjn1n")]
+layout_mode = 0
+offset_left = 1058.0
+offset_top = 440.0
+offset_right = 1152.0
+offset_bottom = 534.0
+
+[node name="Run_away" parent="." instance=ExtResource("4_x63ue")]
+layout_mode = 0
+offset_left = 1058.0
+offset_top = 534.0
+offset_right = 1153.0
+offset_bottom = 650.0
+
+[node name="PlayerStats" parent="." instance=ExtResource("7_3t1kc")]
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 45.0
+
+[node name="Direwolf" parent="." instance=ExtResource("9_1pjl6")]
+position = Vector2(708, 117)
+script = ExtResource("10_1pjl6")
+
+[node name="dragon" parent="." instance=ExtResource("11_cjtla")]
+position = Vector2(905, 60)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 326)
+script = ExtResource("12_74ohg")

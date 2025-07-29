@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl2rht10huwsl"]
+
+[ext_resource type="PackedScene" uid="uid://cixngepxrr4sh" path="res://Scenes/turn.tscn" id="1_r04n3"]
+
+[node name="Button" type="Button"]
+offset_left = 1061.0
+offset_top = 425.0
+offset_right = 1144.0
+offset_bottom = 523.0
+
+[node name="Turn" parent="." instance=ExtResource("1_r04n3")]
+position = Vector2(43, 49)

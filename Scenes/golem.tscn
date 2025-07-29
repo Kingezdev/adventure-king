@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://h8067xb685cn"]
+
+[ext_resource type="Script" uid="uid://c0kyed4ssia56" path="res://Scripts/golem.gd" id="1_568nj"]
+[ext_resource type="Texture2D" uid="uid://1agv6us55mr" path="res://Assets/NPC/golem.png" id="1_bs7yq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqe5q"]
+size = Vector2(188, 231)
+
+[node name="Golem" type="Area2D"]
+script = ExtResource("1_568nj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(200, 250)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_bs7yq")
+expand_mode = 1
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = 6.0
+offset_top = 245.0
+offset_right = 190.0
+offset_bottom = 272.0
+max_value = 200.0
+value = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(99, 124.5)
+shape = SubResource("RectangleShape2D_lqe5q")

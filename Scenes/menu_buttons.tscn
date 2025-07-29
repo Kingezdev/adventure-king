@@ -1,0 +1,262 @@
+[gd_scene load_steps=13 format=3 uid="uid://c7mvxsnvl5gkv"]
+
+[ext_resource type="Script" uid="uid://dgadb4oof276" path="res://Scripts/menu_buttons.gd" id="1_ui03w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41r1c"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ui03w"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywhir"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlt17"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w8x2"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et2jq"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llg5u"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok7vf"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6dvn"]
+corner_radius_top_left = 360
+corner_radius_top_right = 360
+corner_radius_bottom_right = 360
+corner_radius_bottom_left = 360
+
+[node name="Menu_Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ui03w")
+
+[node name="Adventure" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 205.0
+offset_right = 143.0
+offset_bottom = 389.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "ADVENTURE
+"
+
+[node name="Deck" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 150.0
+offset_top = 203.0
+offset_right = 297.0
+offset_bottom = 387.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_41r1c")
+text = "Deck
+"
+
+[node name="Levels" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 397.0
+offset_right = 142.0
+offset_bottom = 469.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ui03w")
+text = "SKLL TREE
+"
+
+[node name="Options" type="Button" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 396.0
+offset_right = 297.0
+offset_bottom = 469.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ywhir")
+text = "SUMMON"
+
+[node name="Events" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 477.0
+offset_right = 298.0
+offset_bottom = 556.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlt17")
+text = "Events
+"
+
+[node name="Marathon" type="Button" parent="."]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 400.0
+offset_right = 544.0
+offset_bottom = 637.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6w8x2")
+text = "Marathon"
+
+[node name="Dungeons" type="Button" parent="."]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 402.0
+offset_right = 694.0
+offset_bottom = 639.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_et2jq")
+text = "Dungeon
+"
+
+[node name="Boss" type="Button" parent="."]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 402.0
+offset_right = 846.0
+offset_bottom = 639.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_llg5u")
+text = "Boss"
+
+[node name="Shop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 199.0
+offset_right = 847.0
+offset_bottom = 387.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ok7vf")
+text = "Shop
+
+"
+
+[node name="Profile" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 188.0
+offset_bottom = 194.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile9" type="Button" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 140.0
+offset_right = 241.0
+offset_bottom = 189.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile10" type="Button" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 140.0
+offset_right = 293.0
+offset_bottom = 189.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 562.0
+offset_right = 90.0
+offset_bottom = 645.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 559.0
+offset_right = 188.0
+offset_bottom = 642.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 562.0
+offset_right = 296.0
+offset_bottom = 645.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 22.0
+offset_right = 857.0
+offset_bottom = 105.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 24.0
+offset_right = 1144.0
+offset_bottom = 107.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile7" type="Button" parent="."]
+layout_mode = 0
+offset_left = 886.0
+offset_top = 196.0
+offset_right = 1141.0
+offset_bottom = 279.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile8" type="Button" parent="."]
+layout_mode = 0
+offset_left = 891.0
+offset_top = 309.0
+offset_right = 1146.0
+offset_bottom = 392.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile11" type="Button" parent="."]
+layout_mode = 0
+offset_left = 969.0
+offset_top = 424.0
+offset_right = 1144.0
+offset_bottom = 505.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[node name="Profile12" type="Button" parent="."]
+layout_mode = 0
+offset_left = 971.0
+offset_top = 553.0
+offset_right = 1146.0
+offset_bottom = 634.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6dvn")
+
+[connection signal="pressed" from="Adventure" to="." method="_on_adventure_pressed"]

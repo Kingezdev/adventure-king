@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://citgpufbfbsuv"]
+
+[ext_resource type="Script" uid="uid://bqy8kag5u85iy" path="res://Scripts/jotor.gd" id="1_gw3j0"]
+[ext_resource type="Texture2D" uid="uid://c07npg5q7aasy" path="res://Assets/NPC/jotor.png" id="1_p6o53"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbyrk"]
+size = Vector2(179, 215)
+
+[node name="Jotor" type="Area2D"]
+script = ExtResource("1_gw3j0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(200, 250)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_p6o53")
+expand_mode = 1
+flip_h = true
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = 13.0
+offset_top = 234.0
+offset_right = 192.0
+offset_bottom = 261.0
+max_value = 150.0
+value = 150.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(103.5, 123.5)
+shape = SubResource("RectangleShape2D_bbyrk")

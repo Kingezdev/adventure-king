@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bojgbsnrx3fbi"]
+
+[ext_resource type="Texture2D" uid="uid://eb553087rxhm" path="res://Assets/NPC/dire wolf.png" id="1_y0xt4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhlgl"]
+size = Vector2(181, 139)
+
+[node name="Direwolf" type="Area2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(180, 200)
+offset_right = 180.0
+offset_bottom = 200.0
+mouse_filter = 2
+texture = ExtResource("1_y0xt4")
+expand_mode = 1
+flip_h = true
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -1.0
+offset_top = 185.0
+offset_right = 180.0
+offset_bottom = 212.0
+value = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(91.5, 110.5)
+shape = SubResource("RectangleShape2D_yhlgl")

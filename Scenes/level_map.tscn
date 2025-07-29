@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://ookg3toa6p61"]
+
+[ext_resource type="Script" uid="uid://du4ku6gnqutba" path="res://Scripts/level_map.gd" id="1_8xd6f"]
+[ext_resource type="Texture2D" uid="uid://bo58coxrw2rff" path="res://Assets/UI/LevelMap.png" id="2_8xd6f"]
+[ext_resource type="PackedScene" uid="uid://bjvcmtfv48jtw" path="res://Scenes/level_button.tscn" id="3_2bcta"]
+
+[node name="LevelMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8xd6f")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = -1.0
+offset_right = 1151.0
+offset_bottom = 651.0
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MapLayer" type="Control" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MapLayer"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 1150.0
+offset_bottom = 7866.0
+texture = ExtResource("2_8xd6f")
+expand_mode = 1
+
+[node name="LevelButton" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 59.0
+offset_top = 33.0
+offset_right = -51.0
+offset_bottom = -348.0

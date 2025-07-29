@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw626ephi65wm"]
+
+[ext_resource type="Script" uid="uid://d01jevpl6vqyn" path="res://Scripts/End_turn.gd" id="1_n4tde"]
+[ext_resource type="PackedScene" uid="uid://cixngepxrr4sh" path="res://Scenes/turn.tscn" id="1_r04n3"]
+
+[node name="End_turn" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1061.0
+offset_top = 425.0
+offset_right = 1144.0
+offset_bottom = 523.0
+script = ExtResource("1_n4tde")
+
+[node name="Turn" parent="." instance=ExtResource("1_r04n3")]
+position = Vector2(43, 49)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 87.0
+offset_bottom = 97.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

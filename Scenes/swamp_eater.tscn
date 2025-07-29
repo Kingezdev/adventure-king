@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkk1kidl775cm"]
+
+[ext_resource type="Script" uid="uid://bcrbloyhty011" path="res://Scripts/swamp_eater.gd" id="1_ollm1"]
+[ext_resource type="Texture2D" uid="uid://b3h1k36jx527p" path="res://Assets/NPC/swamp eater.png" id="1_sqi25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccwh2"]
+size = Vector2(64, 74)
+
+[node name="Swamp_eater" type="Area2D"]
+script = ExtResource("1_ollm1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(70, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_sqi25")
+expand_mode = 1
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = 2.0
+offset_top = 80.0
+offset_right = 66.0
+offset_bottom = 107.0
+max_value = 50.0
+value = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34, 42)
+shape = SubResource("RectangleShape2D_ccwh2")

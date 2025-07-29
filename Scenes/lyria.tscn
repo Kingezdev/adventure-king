@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c76bagp5xnrpq"]
+
+[ext_resource type="Texture2D" uid="uid://2xstoucv055v" path="res://Assets/UI/cards/Lyria.png" id="1_mxm1k"]
+[ext_resource type="Script" uid="uid://b5uvpo5lysm60" path="res://Scripts/lyria.gd" id="1_uuk52"]
+
+[node name="Lyria" type="Control"]
+custom_minimum_size = Vector2(120, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 182.0
+offset_bottom = 233.0
+script = ExtResource("1_uuk52")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(180, 230)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 121.0
+offset_bottom = 181.0
+texture = ExtResource("1_mxm1k")
+expand_mode = 1

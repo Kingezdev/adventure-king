@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwakjy4xnjak1"]
+
+[ext_resource type="Texture2D" uid="uid://b7uiijcpoywxt" path="res://Assets/UI/Casino.png" id="1_ssvx5"]
+[ext_resource type="Texture2D" uid="uid://cmwxret5n8y14" path="res://Assets/UI/characters/file_00000000eccc6243a1d64eca152f92fd.png" id="2_6uxwp"]
+[ext_resource type="Texture2D" uid="uid://chd70uoo6kr2y" path="res://Assets/UI/characters/file_00000000d49c620a8ab1192382f26779-removebg-preview.png" id="2_71es4"]
+[ext_resource type="Texture2D" uid="uid://ddk8vfe4s6ljc" path="res://Assets/UI/characters/Marco.png" id="3_3b2xu"]
+
+[node name="Episode1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 661.0
+texture = ExtResource("1_ssvx5")
+expand_mode = 1
+
+[node name="File00000000d49c620a8Ab1192382f26779-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(581, 182)
+scale = Vector2(0.650735, 0.589052)
+texture = ExtResource("2_71es4")
+flip_h = true
+
+[node name="Loca" type="Sprite2D" parent="."]
+position = Vector2(798, 265)
+scale = Vector2(0.270142, 0.281413)
+texture = ExtResource("2_6uxwp")
+
+[node name="Marco" type="Sprite2D" parent="."]
+position = Vector2(396, 220)
+scale = Vector2(0.555627, 0.519855)
+texture = ExtResource("3_3b2xu")
+flip_h = true

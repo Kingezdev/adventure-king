@@ -1,0 +1,279 @@
+[gd_scene load_steps=14 format=3 uid="uid://dqhjtisi1hn24"]
+
+[ext_resource type="Texture2D" uid="uid://2ar7j73omww4" path="res://Assets/UI/background1.jpg" id="1_n45e2"]
+[ext_resource type="PackedScene" uid="uid://chvfyt18m7c30" path="res://Scenes/adventure.tscn" id="2_48xlc"]
+[ext_resource type="PackedScene" uid="uid://c2qdmmjsl6nyt" path="res://Scenes/marathon.tscn" id="3_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://bl7583rovn454" path="res://Scenes/CardDeck.tscn" id="3_opfnp"]
+[ext_resource type="PackedScene" uid="uid://8h8crow037j2" path="res://Scenes/options.tscn" id="4_n45e2"]
+[ext_resource type="PackedScene" uid="uid://m41gd2oesbf5" path="res://Scenes/dungeon.tscn" id="4_opfnp"]
+[ext_resource type="PackedScene" uid="uid://dwgk3swkmx1ia" path="res://Scenes/boss.tscn" id="7_cp0ys"]
+[ext_resource type="PackedScene" uid="uid://d2q3ordt2gnu5" path="res://Scenes/skill_tree.tscn" id="7_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://dwsffkvsghg3p" path="res://Assets/UI/Title.png" id="9_trj04"]
+
+[sub_resource type="Animation" id="Animation_16hvj"]
+resource_name = "Adventure"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Adventure:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-246, 51), Vector2(127, 51)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardDeck:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-249, 222), Vector2(127, 222)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(125, 654), Vector2(125, 395)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkillTree:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(269, 661), Vector2(269, 392)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Marathon:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.1, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(554, 651), Vector2(554, 467)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Boss:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.3, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(692, 651), Vector2(692, 461)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Dungeon:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(838, 644), Vector2(838, 461)]
+}
+
+[sub_resource type="Animation" id="Animation_yhxw7"]
+resource_name = "Deck"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CardDeck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-245, 222), Vector2(127, 222)]
+}
+
+[sub_resource type="Animation" id="Animation_trj04"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CardDeck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-245, 222)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Adventure:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-246, 51)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125, 654)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkillTree:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(269, 393)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Marathon:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(554, 651)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Boss:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(692, 651)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Dungeon:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(838, 644)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_16hvj"]
+_data = {
+&"Adventure": SubResource("Animation_16hvj"),
+&"Deck": SubResource("Animation_yhxw7"),
+&"RESET": SubResource("Animation_trj04")
+}
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+offset_top = -1.0
+offset_right = 806.0
+offset_bottom = 451.0
+scale = Vector2(1.43625, 1.43556)
+texture = ExtResource("1_n45e2")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Adventure" parent="." instance=ExtResource("2_48xlc")]
+offset_left = -246.0
+offset_top = 51.0
+offset_right = 14.0
+offset_bottom = 210.0
+
+[node name="CardDeck" parent="." instance=ExtResource("3_opfnp")]
+offset_left = -245.0
+offset_top = 222.0
+offset_right = -245.0
+offset_bottom = 222.0
+
+[node name="Dungeon" parent="." instance=ExtResource("4_opfnp")]
+offset_left = 838.0
+offset_top = 644.0
+offset_right = 838.0
+offset_bottom = 644.0
+
+[node name="Marathon" parent="." instance=ExtResource("3_ce3w2")]
+offset_left = 554.0
+offset_top = 651.0
+offset_right = 554.0
+offset_bottom = 651.0
+
+[node name="Options" parent="." instance=ExtResource("4_n45e2")]
+texture_filter = 1
+offset_left = 125.0
+offset_top = 654.0
+offset_right = 125.0
+offset_bottom = 654.0
+
+[node name="SkillTree" parent="." instance=ExtResource("7_yhxw7")]
+offset_left = 269.0
+offset_top = 393.0
+offset_right = 269.0
+offset_bottom = 393.0
+
+[node name="Boss" parent="." instance=ExtResource("7_cp0ys")]
+offset_left = 692.0
+offset_top = 651.0
+offset_right = 692.0
+offset_bottom = 651.0
+
+[node name="MenuAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_16hvj")
+}
+autoplay = "Adventure"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 431.0
+offset_top = 19.0
+offset_right = 1126.0
+offset_bottom = 277.0
+texture = ExtResource("9_trj04")
+expand_mode = 1

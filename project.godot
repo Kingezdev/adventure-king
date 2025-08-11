@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Adventure King"
-run/main_scene="uid://c84s6b47i3q6r"
+run/main_scene="uid://v1ts82fr17tn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

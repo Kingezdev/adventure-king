@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://chvfyt18m7c30"]
+
+[ext_resource type="Script" uid="uid://h5kl1rt3nfhp" path="res://Scripts/adventure.gd" id="1_unklh"]
+[ext_resource type="Texture2D" uid="uid://d2i6mid73jk1j" path="res://Assets/UI/adventure (4).jpg" id="2_gi4nm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi4nm"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="Advenure" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 5.0
+offset_right = 261.0
+offset_bottom = 158.0
+script = ExtResource("1_unklh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 255.0
+offset_bottom = 144.0
+texture = ExtResource("2_gi4nm")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 254.0
+offset_bottom = 146.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_gi4nm")

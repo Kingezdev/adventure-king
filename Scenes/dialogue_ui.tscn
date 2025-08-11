@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwf6uemjavso6"]
+
+[ext_resource type="Script" uid="uid://t43byv7s8t5r" path="res://Scripts/dialogue_ui.gd" id="1_gsrxu"]
+[ext_resource type="Texture2D" uid="uid://b21srmsepd08w" path="res://Assets/Player/mc.png" id="1_q8n66"]
+
+[node name="DialogueUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gsrxu")
+
+[node name="CharacterPortrait" type="Sprite2D" parent="."]
+position = Vector2(98, 135)
+texture = ExtResource("1_q8n66")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 133.0
+offset_right = 240.0
+offset_bottom = 161.0
+text = "YOTA"
+
+[node name="DialogueBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 172.0
+offset_right = 541.0
+offset_bottom = 266.0
+
+[node name="DialogueText" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 0
+offset_top = 13.0
+offset_right = 359.0
+offset_bottom = 82.0
+
+[node name="Timer" type="Timer" parent="."]

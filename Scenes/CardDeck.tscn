@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl7583rovn454"]
+
+[ext_resource type="Texture2D" uid="uid://176tytiku1vw" path="res://Assets/UI/DeckGreen.png" id="1_e56y1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e56y1"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="CardDeck" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 255.0
+offset_bottom = 144.0
+texture = ExtResource("1_e56y1")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 252.0
+offset_bottom = 143.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_e56y1")

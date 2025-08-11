@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ookg3toa6p61"]
+[gd_scene load_steps=5 format=3 uid="uid://ookg3toa6p61"]
 
 [ext_resource type="Script" uid="uid://du4ku6gnqutba" path="res://Scripts/level_map.gd" id="1_8xd6f"]
 [ext_resource type="Texture2D" uid="uid://bo58coxrw2rff" path="res://Assets/UI/LevelMap.png" id="2_8xd6f"]
 [ext_resource type="PackedScene" uid="uid://bjvcmtfv48jtw" path="res://Scenes/level_button.tscn" id="3_2bcta"]
+[ext_resource type="Script" uid="uid://mswetjju5xi4" path="res://Scripts/level_button.gd" id="4_1enw7"]
 
 [node name="LevelMap" type="Control"]
 layout_mode = 3
@@ -15,20 +16,22 @@ script = ExtResource("1_8xd6f")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 clip_contents = false
-layout_mode = 0
-offset_left = -1.0
-offset_right = 1151.0
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 1
+offset_right = 1152.0
 offset_bottom = 651.0
 follow_focus = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
 [node name="MapLayer" type="Control" parent="ScrollContainer"]
+custom_minimum_size = Vector2(0, 8300)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/MapLayer"]
+custom_minimum_size = Vector2(0, 8000)
 layout_mode = 0
 offset_left = 2.0
 offset_top = 8.0
@@ -39,7 +42,164 @@ expand_mode = 1
 
 [node name="LevelButton" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
 layout_mode = 1
-offset_left = 59.0
-offset_top = 33.0
-offset_right = -51.0
-offset_bottom = -348.0
+offset_left = 452.0
+offset_top = 7805.0
+offset_right = -445.0
+offset_bottom = -408.0
+script = ExtResource("4_1enw7")
+
+[node name="LevelButton2" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 452.0
+offset_top = 7676.0
+offset_right = -445.0
+offset_bottom = -537.0
+
+[node name="LevelButton3" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 454.0
+offset_top = 7542.0
+offset_right = -443.0
+offset_bottom = -671.0
+
+[node name="LevelButton4" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 117.0
+offset_top = 7543.0
+offset_right = -780.0
+offset_bottom = -670.0
+
+[node name="LevelButton5" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 117.0
+offset_top = 7412.0
+offset_right = -780.0
+offset_bottom = -801.0
+
+[node name="LevelButton6" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 454.0
+offset_top = 7411.0
+offset_right = -443.0
+offset_bottom = -802.0
+
+[node name="LevelButton7" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 453.0
+offset_top = 7285.0
+offset_right = -444.0
+offset_bottom = -928.0
+
+[node name="LevelButton8" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 454.0
+offset_top = 7163.0
+offset_right = -443.0
+offset_bottom = -1050.0
+
+[node name="LevelButton9" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 788.0
+offset_top = 7163.0
+offset_right = -109.0
+offset_bottom = -1050.0
+
+[node name="LevelButton10" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 453.0
+offset_top = 7037.0
+offset_right = -444.0
+offset_bottom = -1176.0
+
+[node name="LevelButton11" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 453.0
+offset_top = 6913.0
+offset_right = -444.0
+offset_bottom = -1300.0
+
+[node name="LevelButton12" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 791.0
+offset_top = 6912.0
+offset_right = -106.0
+offset_bottom = -1301.0
+
+[node name="LevelButton13" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 118.0
+offset_top = 6913.0
+offset_right = -779.0
+offset_bottom = -1300.0
+
+[node name="LevelButton14" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 453.0
+offset_top = 6780.0
+offset_right = -444.0
+offset_bottom = -1433.0
+
+[node name="LevelButton15" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 452.0
+offset_top = 6649.0
+offset_right = -445.0
+offset_bottom = -1564.0
+
+[node name="LevelButton16" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 454.0
+offset_top = 6518.0
+offset_right = -443.0
+offset_bottom = -1695.0
+
+[node name="LevelButton17" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 791.0
+offset_top = 6520.0
+offset_right = -106.0
+offset_bottom = -1693.0
+
+[node name="LevelButton18" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 791.0
+offset_top = 6387.0
+offset_right = -106.0
+offset_bottom = -1826.0
+
+[node name="LevelButton19" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 453.0
+offset_top = 6385.0
+offset_right = -444.0
+offset_bottom = -1828.0
+
+[node name="LevelButton20" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 455.0
+offset_top = 6257.0
+offset_right = -442.0
+offset_bottom = -1956.0
+
+[node name="LevelButton21" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 453.0
+offset_top = 6124.0
+offset_right = -444.0
+offset_bottom = -2089.0
+
+[node name="LevelButton22" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 116.0
+offset_top = 6124.0
+offset_right = -781.0
+offset_bottom = -2089.0
+
+[node name="LevelButton23" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+layout_mode = 1
+offset_left = 787.0
+offset_top = 6126.0
+offset_right = -110.0
+offset_bottom = -2087.0
+
+[connection signal="pressed" from="ScrollContainer/MapLayer/LevelButton" to="ScrollContainer/MapLayer/LevelButton" method="_on_pressed"]

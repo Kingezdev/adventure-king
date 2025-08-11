@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2qdmmjsl6nyt"]
+
+[ext_resource type="Texture2D" uid="uid://bmmbpjwwy13qi" path="res://Assets/UI/Marathongreen (2).png" id="1_p465k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p465k"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="Marathon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1027.0
+offset_bottom = -469.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 117.0
+offset_bottom = 170.0
+texture = ExtResource("1_p465k")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 117.0
+offset_bottom = 170.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_p465k")

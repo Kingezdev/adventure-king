@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwgk3swkmx1ia"]
+
+[ext_resource type="Texture2D" uid="uid://8t1kfudbncgq" path="res://Assets/UI/BossGreen (2).png" id="1_0154r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0154r"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="Boss" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1029.0
+offset_bottom = -477.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 169.0
+texture = ExtResource("1_0154r")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 117.0
+offset_bottom = 170.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0154r")

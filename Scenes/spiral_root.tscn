@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://ghvjrnkerw"]
+
+[ext_resource type="Texture2D" uid="uid://cjfs1jfyclw4k" path="res://Assets/UI/SpiralCards.png" id="1_o2vt7"]
+[ext_resource type="Script" uid="uid://dvcb5g5girpu" path="res://Scripts/spiral_root.gd" id="1_tegme"]
+
+[sub_resource type="Animation" id="Animation_3r7ll"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpiralCards:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tegme"]
+resource_name = "Spin"
+length = 14.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpiralCards:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.07, 4.12, 6.09, 8, 10.065, 11.9666, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.783275, -1.56791, -2.38336, -3.14634, -3.93523, -4.70277, -6.28726]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p35jx"]
+_data = {
+&"RESET": SubResource("Animation_3r7ll"),
+&"Spin": SubResource("Animation_tegme")
+}
+
+[node name="SpiralRoot" type="Node2D"]
+script = ExtResource("1_tegme")
+
+[node name="SpiralCards" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(545, 276)
+scale = Vector2(0.70025, 0.71075)
+texture = ExtResource("1_o2vt7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_p35jx")
+}
+autoplay = "Spin"

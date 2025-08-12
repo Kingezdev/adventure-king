@@ -1,9 +1,10 @@
-extends Control  # or Control, or whatever node you want to hover
+extends TextureRect
 
 @export var hover_distance := 10.0
 @export var hover_time := 1.0
 
 func _ready():
+	await get_tree().create_timer(2.3).timeout
 	start_hover()
 
 func start_hover():

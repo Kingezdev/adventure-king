@@ -1,5 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2q3ordt2gnu5"]
+[gd_scene load_steps=5 format=3 uid="uid://d2q3ordt2gnu5"]
 
+[ext_resource type="Texture2D" uid="uid://d2i6mid73jk1j" path="res://Assets/UI/adventure (4).jpg" id="1_2gqrc"]
+[ext_resource type="Script" uid="uid://c4wj63iyj4w51" path="res://Scripts/skill_tree.gd" id="1_b5c3k"]
 [ext_resource type="Texture2D" uid="uid://crvlo07lqwnty" path="res://Assets/UI/SkillTreeGreen.png" id="1_wp0ut"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp0ut"]
@@ -14,6 +16,18 @@ offset_right = -1027.0
 offset_bottom = -465.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b5c3k")
+
+[node name="TextureRectShadow" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.494118)
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.0
+offset_top = 13.0
+offset_right = 111.0
+offset_bottom = 176.0
+texture = ExtResource("1_2gqrc")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

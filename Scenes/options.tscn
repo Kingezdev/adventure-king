@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://8h8crow037j2"]
+[gd_scene load_steps=5 format=3 uid="uid://8h8crow037j2"]
 
+[ext_resource type="Texture2D" uid="uid://d2i6mid73jk1j" path="res://Assets/UI/adventure (4).jpg" id="1_4tmxy"]
 [ext_resource type="Texture2D" uid="uid://c4484ufd7cgj8" path="res://Assets/UI/OptionsGreen3.png" id="1_prnvy"]
+[ext_resource type="Script" uid="uid://cjd2nlskl2nac" path="res://Scripts/options.gd" id="1_qyyw6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prnvy"]
 bg_color = Color(0, 0, 0, 0)
@@ -14,6 +16,18 @@ offset_right = -1029.0
 offset_bottom = -472.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qyyw6")
+
+[node name="TextureRectShadow" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.494118)
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.0
+offset_top = 13.0
+offset_right = 111.0
+offset_bottom = 176.0
+texture = ExtResource("1_4tmxy")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

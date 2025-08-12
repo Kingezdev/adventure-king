@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dqhjtisi1hn24"]
+[gd_scene load_steps=21 format=3 uid="uid://dqhjtisi1hn24"]
 
+[ext_resource type="Script" uid="uid://dvv818twqc2xg" path="res://Scripts/main_menu.gd" id="1_16hvj"]
 [ext_resource type="Texture2D" uid="uid://2ar7j73omww4" path="res://Assets/UI/background1.jpg" id="1_n45e2"]
 [ext_resource type="PackedScene" uid="uid://chvfyt18m7c30" path="res://Scenes/adventure.tscn" id="2_48xlc"]
 [ext_resource type="PackedScene" uid="uid://c2qdmmjsl6nyt" path="res://Scenes/marathon.tscn" id="3_ce3w2"]
@@ -9,6 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dwgk3swkmx1ia" path="res://Scenes/boss.tscn" id="7_cp0ys"]
 [ext_resource type="PackedScene" uid="uid://d2q3ordt2gnu5" path="res://Scenes/skill_tree.tscn" id="7_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://dwsffkvsghg3p" path="res://Assets/UI/Title.png" id="9_trj04"]
+[ext_resource type="PackedScene" uid="uid://d4i2mrll6jpwu" path="res://Scenes/leaf_2.tscn" id="11_vtepg"]
+[ext_resource type="PackedScene" uid="uid://c7c2qgdexh6c6" path="res://Scenes/leaf_3.tscn" id="12_vtepg"]
+[ext_resource type="PackedScene" uid="uid://uihgtjwk5xq" path="res://Scenes/leaf_4.tscn" id="13_vtepg"]
+[ext_resource type="PackedScene" uid="uid://3lfw13ci4utj" path="res://Scenes/leaf_1.tscn" id="14_8dnnj"]
+[ext_resource type="Script" uid="uid://lbg43c850kvw" path="res://Scripts/title.gd" id="15_8dnnj"]
 
 [sub_resource type="Animation" id="Animation_16hvj"]
 resource_name = "Adventure"
@@ -97,6 +103,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(838, 644), Vector2(838, 461)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Title:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.7, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(431, -240), Vector2(431, 14)]
+}
 
 [sub_resource type="Animation" id="Animation_yhxw7"]
 resource_name = "Deck"
@@ -112,6 +130,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-245, 222), Vector2(127, 222)]
 }
+
+[sub_resource type="Animation" id="Animation_vr1f0"]
+resource_name = "Hover"
 
 [sub_resource type="Animation" id="Animation_trj04"]
 length = 0.001
@@ -199,15 +220,29 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(838, 644)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Title:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(431, -240)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_16hvj"]
 _data = {
 &"Adventure": SubResource("Animation_16hvj"),
 &"Deck": SubResource("Animation_yhxw7"),
+&"Hover": SubResource("Animation_vr1f0"),
 &"RESET": SubResource("Animation_trj04")
 }
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_16hvj")
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -217,6 +252,30 @@ offset_bottom = 451.0
 scale = Vector2(1.43625, 1.43556)
 texture = ExtResource("1_n45e2")
 expand_mode = 1
+
+[node name="Leaf1" parent="." instance=ExtResource("14_8dnnj")]
+position = Vector2(310, -83)
+
+[node name="Leaf5" parent="." instance=ExtResource("14_8dnnj")]
+position = Vector2(827, -120)
+
+[node name="Leaf2" parent="." instance=ExtResource("11_vtepg")]
+position = Vector2(474, -119)
+
+[node name="Leaf6" parent="." instance=ExtResource("11_vtepg")]
+position = Vector2(88, -214)
+
+[node name="Leaf3" parent="." instance=ExtResource("12_vtepg")]
+position = Vector2(99, -80)
+
+[node name="Leaf7" parent="." instance=ExtResource("12_vtepg")]
+position = Vector2(609, -216)
+
+[node name="Leaf4" parent="." instance=ExtResource("13_vtepg")]
+position = Vector2(639, -85)
+
+[node name="Leaf8" parent="." instance=ExtResource("13_vtepg")]
+position = Vector2(1060, -201)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
@@ -228,9 +287,9 @@ offset_right = 14.0
 offset_bottom = 210.0
 
 [node name="CardDeck" parent="." instance=ExtResource("3_opfnp")]
-offset_left = -245.0
+offset_left = -249.0
 offset_top = 222.0
-offset_right = -245.0
+offset_right = -249.0
 offset_bottom = 222.0
 
 [node name="Dungeon" parent="." instance=ExtResource("4_opfnp")]
@@ -254,9 +313,9 @@ offset_bottom = 654.0
 
 [node name="SkillTree" parent="." instance=ExtResource("7_yhxw7")]
 offset_left = 269.0
-offset_top = 393.0
+offset_top = 661.0
 offset_right = 269.0
-offset_bottom = 393.0
+offset_bottom = 661.0
 
 [node name="Boss" parent="." instance=ExtResource("7_cp0ys")]
 offset_left = 692.0
@@ -270,10 +329,13 @@ libraries = {
 }
 autoplay = "Adventure"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 offset_left = 431.0
-offset_top = 19.0
+offset_top = -240.0
 offset_right = 1126.0
-offset_bottom = 277.0
+offset_bottom = 18.0
 texture = ExtResource("9_trj04")
 expand_mode = 1
+script = ExtResource("15_8dnnj")
+
+[connection signal="animation_finished" from="MenuAnimation" to="." method="_on_menu_animation_animation_finished"]

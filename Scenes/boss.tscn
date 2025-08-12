@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwgk3swkmx1ia"]
+[gd_scene load_steps=5 format=3 uid="uid://dwgk3swkmx1ia"]
 
 [ext_resource type="Texture2D" uid="uid://8t1kfudbncgq" path="res://Assets/UI/BossGreen (2).png" id="1_0154r"]
+[ext_resource type="Script" uid="uid://b6ms3e02mvmdv" path="res://Scripts/boss.gd" id="1_cxrok"]
+[ext_resource type="Texture2D" uid="uid://d2i6mid73jk1j" path="res://Assets/UI/adventure (4).jpg" id="1_wwfse"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0154r"]
 bg_color = Color(0, 0, 0, 0)
@@ -14,6 +16,18 @@ offset_right = -1029.0
 offset_bottom = -477.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cxrok")
+
+[node name="TextureRectShadow" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.494118)
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.0
+offset_top = 13.0
+offset_right = 111.0
+offset_bottom = 176.0
+texture = ExtResource("1_wwfse")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

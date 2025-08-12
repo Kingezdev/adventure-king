@@ -1,7 +1,7 @@
 extends Control
 
 @export var scene_to_load: String = "res://Scenes/main_menu.tscn"
-@export var min_intro_time: float = 3.0  # You can adjust this to whatever you like
+@export var min_intro_time: float = 5.0  # You can adjust this to whatever you like
 
 var _loading := false
 var _elapsed_time := 0.0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://3lfw13ci4utj"]
+
+[ext_resource type="Texture2D" uid="uid://b2cr447svakqb" path="res://Assets/UI/leaf1.png" id="1_o2e3k"]
+[ext_resource type="Script" uid="uid://lwcje6upfclo" path="res://Scripts/leaf_1.gd" id="2_2t2ru"]
+
+[node name="Leaf1" type="Sprite2D"]
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("1_o2e3k")
+script = ExtResource("2_2t2ru")

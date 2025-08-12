@@ -1,5 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2qdmmjsl6nyt"]
+[gd_scene load_steps=5 format=3 uid="uid://c2qdmmjsl6nyt"]
 
+[ext_resource type="Script" uid="uid://8m826pt3rqik" path="res://Scripts/marathon.gd" id="1_i1vt7"]
+[ext_resource type="Texture2D" uid="uid://d2i6mid73jk1j" path="res://Assets/UI/adventure (4).jpg" id="1_jyt0e"]
 [ext_resource type="Texture2D" uid="uid://bmmbpjwwy13qi" path="res://Assets/UI/Marathongreen (2).png" id="1_p465k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p465k"]
@@ -14,6 +16,18 @@ offset_right = -1027.0
 offset_bottom = -469.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i1vt7")
+
+[node name="TextureRectShadow" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.494118)
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.0
+offset_top = 13.0
+offset_right = 111.0
+offset_bottom = 176.0
+texture = ExtResource("1_jyt0e")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

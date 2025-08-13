@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da6m6ihnxl6lv"
-path="res://.godot/imported/Stage 1 icon.jpg-4701ea343c4c3afb8f191a75c69bf6d5.ctex"
+uid="uid://cwqw57koqws6f"
+path="res://.godot/imported/arc1 map.jpg-551501fe6cfb82984c2734f460f5d750.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Stage 1 icon.jpg"
-dest_files=["res://.godot/imported/Stage 1 icon.jpg-4701ea343c4c3afb8f191a75c69bf6d5.ctex"]
+source_file="res://Assets/UI/arc1 map.jpg"
+dest_files=["res://.godot/imported/arc1 map.jpg-551501fe6cfb82984c2734f460f5d750.ctex"]
 
 [params]
 

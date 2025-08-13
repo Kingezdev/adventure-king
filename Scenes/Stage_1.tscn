@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjvcmtfv48jtw"]
+
+[ext_resource type="Texture2D" uid="uid://clm2r6qcs0h1m" path="res://Assets/UI/Stage 1.jpg" id="1_iapje"]
+
+[node name="Stage 1" type="Button"]
+anchors_preset = -1
+anchor_right = 0.227
+anchor_bottom = 0.202
+offset_right = -11.504
+offset_bottom = 0.103989
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 130.0
+texture = ExtResource("1_iapje")
+expand_mode = 1

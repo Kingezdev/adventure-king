@@ -1,0 +1,34 @@
+
+		[
+		{
+			"name": "VINCE",
+			"portrait": "res://characters/Vince.png",
+			"text": "So... this is it, boys and girls. Final hand. Stakes are set.
+One winner takes the pot... and maybe a little more."
+		},
+		{
+			"name": "LORA",
+			"portrait": "res://characters/Lora.png",
+			"text": "You sure you want in on this, Isaac? You’ve lost more than just money in places like this."
+		},
+		{
+			"name": "ISAAC",
+			"portrait": "res://characters/Mc.png",
+			"text": "And yet... I’m still sitting here."
+		},
+		{
+			"name": "ISAAC",
+			"portrait": "res://characters/Mc.png",
+			"text": "Maybe tonight’s my turn."
+		},
+		{
+			"name": "MARCO",
+			"portrait": "res://characters/Marco.png",
+			"text": "Maybe tonight’s my turn."
+		},
+		{
+			"name": "VINCE",
+			"portrait": "res://characters/Vince.png",
+			"text": "Let’s play. Cards down. Eyes up."
+		}
+	]

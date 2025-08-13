@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ookg3toa6p61"]
+[gd_scene load_steps=6 format=3 uid="uid://ookg3toa6p61"]
 
 [ext_resource type="Script" uid="uid://du4ku6gnqutba" path="res://Scripts/level_map.gd" id="1_8xd6f"]
 [ext_resource type="Texture2D" uid="uid://bo58coxrw2rff" path="res://Assets/UI/LevelMap.png" id="2_8xd6f"]
-[ext_resource type="PackedScene" uid="uid://bjvcmtfv48jtw" path="res://Scenes/level_button.tscn" id="3_2bcta"]
-[ext_resource type="Script" uid="uid://mswetjju5xi4" path="res://Scripts/level_button.gd" id="4_1enw7"]
+[ext_resource type="Texture2D" uid="uid://cwqw57koqws6f" path="res://Assets/UI/arc1 map.jpg" id="2_oclep"]
+[ext_resource type="Script" uid="uid://sk0h73rxttvr" path="res://Scripts/scroll_container.gd" id="2_xy4ed"]
+[ext_resource type="PackedScene" uid="uid://bjvcmtfv48jtw" path="res://Scenes/Stage_1.tscn" id="3_2bcta"]
 
 [node name="LevelMap" type="Control"]
 layout_mode = 3
@@ -23,31 +24,42 @@ offset_bottom = 651.0
 follow_focus = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
+script = ExtResource("2_xy4ed")
 
 [node name="MapLayer" type="Control" parent="ScrollContainer"]
-custom_minimum_size = Vector2(0, 8300)
+custom_minimum_size = Vector2(0, 8000)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Arch 1" type="TextureRect" parent="ScrollContainer/MapLayer"]
+texture_filter = 1
+layout_mode = 0
+offset_top = 6902.0
+offset_right = 1151.0
+offset_bottom = 8012.0
+texture = ExtResource("2_oclep")
+expand_mode = 1
+
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/MapLayer"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.317647)
 custom_minimum_size = Vector2(0, 8000)
 layout_mode = 0
 offset_left = 2.0
 offset_top = 8.0
 offset_right = 1150.0
-offset_bottom = 7866.0
+offset_bottom = 8008.0
 texture = ExtResource("2_8xd6f")
 expand_mode = 1
 
-[node name="LevelButton" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
+[node name="Stage 1" parent="ScrollContainer/MapLayer" instance=ExtResource("3_2bcta")]
 texture_filter = 1
 layout_mode = 1
-offset_left = 454.0
-offset_top = 7802.0
-offset_right = -440.0
-offset_bottom = -407.0
-script = ExtResource("4_1enw7")
+anchor_bottom = 0.951
+offset_left = 450.0
+offset_top = 7780.0
+offset_right = 442.312
+offset_bottom = 303.0
 
-[connection signal="pressed" from="ScrollContainer/MapLayer/LevelButton" to="ScrollContainer/MapLayer/LevelButton" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/MapLayer/Stage 1" to="." method="_on_stage_1_pressed"]

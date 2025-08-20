@@ -65,6 +65,7 @@ offset_bottom = 48.0
 script = ExtResource("1_ao526")
 
 [node name="TextureRect2" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 346.0
 offset_bottom = 147.0

@@ -2,19 +2,22 @@ extends Control
 
 # Custom class reference
 
+const SAVE_FILE_PATH := "user://autosave.save"
+@onready var save_timer := Timer.new()
 
 var selected_card: Control = null
 var mouse_over_monster: Node = null
 var health_bar: ProgressBar = null
 
 @onready var deck: HBoxContainer = null
-
 var discard_pile: Array[Control] = []
 var is_player_turn := true
 var target_scene_path: String = ""
 
 
 func _ready() -> void:
+	
+	
 	print("[PlayerStats] _ready() called - instance id:", self.get_instance_id())
 	print("[GameManager] _ready() called")
 	LoadingManager.load_scene_with_loading("res://Game_UI.tscn")
@@ -42,6 +45,7 @@ func _ready() -> void:
 		print("[GameManager] ✅ health_bar found at _ready():", health_bar.name)
 	else:
 		print("[GameManager] ❌ health_bar NOT found at _ready()")
+
 
 
 func _debug_print_tree(node: Node, indent: int = 0) -> void:

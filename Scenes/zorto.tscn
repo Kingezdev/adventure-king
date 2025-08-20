@@ -1,29 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://v3w3ycajm2mc"]
+[gd_scene load_steps=4 format=3 uid="uid://v3w3ycajm2mc"]
 
 [ext_resource type="Texture2D" uid="uid://bmlpfsh1jn0r2" path="res://Assets/UI/cards/Zorto.png" id="1_apv3m"]
 [ext_resource type="Script" uid="uid://b40rkk1margds" path="res://Scripts/zorto.gd" id="1_i0s44"]
+[ext_resource type="Texture2D" uid="uid://jexhyjvquwo8" path="res://Assets/UI/cards/Zed.png" id="2_ljp58"]
 
 [node name="Zorto" type="Control"]
 z_index = 3
 custom_minimum_size = Vector2(120, 180)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -10.0
-offset_top = -7.0
-offset_right = 110.0
-offset_bottom = 189.0
+offset_top = 1.0
+offset_right = 170.0
+offset_bottom = 231.0
 script = ExtResource("1_i0s44")
 
+[node name="card_ui2" type="TextureRect" parent="."]
+modulate = Color(0.157274, 0.157274, 0.157274, 1)
+self_modulate = Color(0, 0, 0, 0.521569)
+custom_minimum_size = Vector2(170, 230)
+layout_mode = 0
+offset_left = -10.0
+offset_top = 4.0
+offset_right = 160.0
+offset_bottom = 234.0
+texture = ExtResource("2_ljp58")
+expand_mode = 1
+
 [node name="TextureRect" type="TextureRect" parent="."]
-z_index = 3
-custom_minimum_size = Vector2(180, 230)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.117
-anchor_right = 0.117
-offset_left = -13.04
-offset_top = 1.0
-offset_right = 106.96
-offset_bottom = 181.0
+custom_minimum_size = Vector2(170, 230)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource("1_apv3m")
 expand_mode = 1

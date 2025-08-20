@@ -1,24 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://0e5ygo04iexv"]
+[gd_scene load_steps=4 format=3 uid="uid://0e5ygo04iexv"]
 
 [ext_resource type="Texture2D" uid="uid://bbqq6m53lmvay" path="res://Assets/UI/cards/Leia.png" id="1_j0wyq"]
 [ext_resource type="Script" uid="uid://co7yh6706hhbg" path="res://Scripts/leia.gd" id="1_vr6a2"]
+[ext_resource type="Texture2D" uid="uid://jexhyjvquwo8" path="res://Assets/UI/cards/Zed.png" id="2_shilh"]
 
 [node name="Leia" type="Control"]
 z_index = 2
 custom_minimum_size = Vector2(120, 180)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 181.0
-offset_bottom = 229.0
+anchor_right = 0.157
+anchor_bottom = 0.353
+offset_right = -10.864
+offset_bottom = 1.256
 script = ExtResource("1_vr6a2")
+
+[node name="card_ui2" type="TextureRect" parent="."]
+modulate = Color(0.157274, 0.157274, 0.157274, 1)
+self_modulate = Color(0, 0, 0, 0.521569)
+z_index = 1
+custom_minimum_size = Vector2(170, 230)
+layout_mode = 0
+offset_left = -10.0
+offset_top = 4.0
+offset_right = 160.0
+offset_bottom = 234.0
+texture = ExtResource("2_shilh")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 1
-custom_minimum_size = Vector2(180, 230)
-layout_mode = 0
+custom_minimum_size = Vector2(170, 230)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.945
+anchor_bottom = 1.0
 offset_left = 1.0
 offset_top = -1.0
-offset_right = 121.0
-offset_bottom = 179.0
+offset_right = -50.045
+offset_bottom = -50.0
 texture = ExtResource("1_j0wyq")
 expand_mode = 1

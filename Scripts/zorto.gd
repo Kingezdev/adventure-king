@@ -1,5 +1,6 @@
 extends Control
 
+@export var card_id: String = "Zorto"
 @export var mana_cost := 5
 @export var damage: int = 10
 @onready var tween := get_tree().create_tween()

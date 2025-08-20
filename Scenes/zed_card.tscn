@@ -4,16 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://jexhyjvquwo8" path="res://Assets/UI/cards/Zed.png" id="1_o6lfh"]
 
 [node name="Control" type="Control"]
-custom_minimum_size = Vector2(120, 180)
+custom_minimum_size = Vector2(170, 230)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 180.0
-offset_bottom = 232.0
+offset_right = 170.0
+offset_bottom = 230.0
 script = ExtResource("1_cewc0")
+
+[node name="card_ui2" type="TextureRect" parent="."]
+modulate = Color(0.157274, 0.157274, 0.157274, 1)
+self_modulate = Color(0, 0, 0, 0.521569)
+z_index = 1
+custom_minimum_size = Vector2(170, 230)
+layout_mode = 0
+offset_left = -10.0
+offset_top = 4.0
+offset_right = 160.0
+offset_bottom = 234.0
+texture = ExtResource("1_o6lfh")
+expand_mode = 1
 
 [node name="card_ui" type="TextureRect" parent="."]
 z_index = 1
-custom_minimum_size = Vector2(180, 230)
+custom_minimum_size = Vector2(170, 230)
 layout_mode = 0
 offset_left = -1.0
 offset_right = 119.0

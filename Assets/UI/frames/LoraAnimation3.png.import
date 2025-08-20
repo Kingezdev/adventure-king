@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjajn7kxdne1c"
-path="res://.godot/imported/puprlead.png-5d66910eeecbe1882d884b5c57073d6f.ctex"
+uid="uid://cp7ddho53lrkt"
+path="res://.godot/imported/LoraAnimation3.png-7b02950afeb9d185cb926e6d13787db9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/puprlead.png"
-dest_files=["res://.godot/imported/puprlead.png-5d66910eeecbe1882d884b5c57073d6f.ctex"]
+source_file="res://Assets/UI/frames/LoraAnimation3.png"
+dest_files=["res://.godot/imported/LoraAnimation3.png-7b02950afeb9d185cb926e6d13787db9.ctex"]
 
 [params]
 

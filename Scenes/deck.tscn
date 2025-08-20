@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://tl1xrbodvq0j"]
+[gd_scene load_steps=6 format=3 uid="uid://tl1xrbodvq0j"]
 
+[ext_resource type="Script" uid="uid://cb0d6g7yc3ybq" path="res://Scripts/deck.gd" id="1_ey0yq"]
 [ext_resource type="PackedScene" uid="uid://0e5ygo04iexv" path="res://Scenes/leia.tscn" id="1_io7pv"]
 [ext_resource type="PackedScene" uid="uid://v3w3ycajm2mc" path="res://Scenes/zorto.tscn" id="1_xvpt4"]
 [ext_resource type="PackedScene" uid="uid://b1vujv2611iqn" path="res://Scenes/zed_card.tscn" id="2_nlncs"]
@@ -15,6 +16,9 @@ offset_right = -522.0
 offset_bottom = -422.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 2
+alignment = 1
+script = ExtResource("1_ey0yq")
 
 [node name="Zorto" parent="." instance=ExtResource("1_xvpt4")]
 custom_minimum_size = Vector2(180, 230)

@@ -1,5 +1,6 @@
 extends Control
 
+@export var card_id: String = "Lyria"
 @export var heal_amount := 10
 @export var mana_cost := 5
 @onready var tween := get_tree().create_tween()

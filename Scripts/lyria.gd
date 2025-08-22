@@ -33,6 +33,7 @@ func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("[Card] Card clicked:", name)
 		GameManager.select_card(self)
+		accept_event()  # ✅ For Control nodes
 
 func get_heal():
 	return heal_amount

@@ -1,20 +1,14 @@
 extends Node2D
 
+@onready var deck: HBoxContainer = $Deck
+@onready var game_layer: Node2D = $GameLayer
+
+@onready var target_node = $TargetNode
+@onready var dependent_node = $DependentNode
+
 func _ready():
-	print("[DEBUG] Stage 1 game started")
-	DialogueManager.start_dialogue_from_file(
-		"res://data/dialogues/stage_1.json",
-		_on_dialogue_finished
-	)
+	game_layer.connect("visibility_changed", Callable(self, "_on_target_visibility_changed"))
+	deck.visible = game_layer.visible  # set initial state
 
-func _on_dialogue_finished():
-	print("[DEBUG] Dialogue finished, continue game...")
-	start_gameplay()
-
-func start_gameplay():
-	print("[DEBUG] Gameplay started for Stage 1")
-	# TODO: Enable player controls, spawn enemies, etc.
-
-func end_gameplay():
-	print("[DEBUG] Gameplay ended. Loading next stage...")
-	get_tree().change_scene_to_file("res://scenes/stage_2.tscn")
+func _on_target_visibility_changed():
+	deck.visible = game_layer.visible

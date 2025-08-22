@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1o0vlf4l8n2b"]
+
+[ext_resource type="Script" uid="uid://bvmqpdxpsectd" path="res://Scripts/you_won.gd" id="1_b53s0"]
+[ext_resource type="Texture2D" uid="uid://bo1qdbw7e1aux" path="res://Assets/UI/YouWon.jpg" id="1_vac7v"]
+
+[node name="YouWon" type="Node2D"]
+script = ExtResource("1_b53s0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1157.0
+offset_bottom = 638.0
+texture = ExtResource("1_vac7v")
+expand_mode = 1
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 378.0
+offset_top = 470.0
+offset_right = 797.0
+offset_bottom = 533.0
+theme_override_font_sizes/font_size = 50
+text = "CONTINUE"
+
+[node name="MainMenu" type="Button" parent="."]
+offset_left = 378.0
+offset_top = 558.0
+offset_right = 797.0
+offset_bottom = 621.0
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"

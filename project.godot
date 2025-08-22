@@ -20,8 +20,6 @@ config/icon="res://icon.svg"
 GameManager="*res://Scripts/GameManager.gd"
 LoadingManager="*res://Scripts/LoadingManager.gd"
 UserStats="*res://Scripts/UserStats.gd"
-DialogueManager="*res://Scenes/dialogue_manager.tscn"
-DialogueData="*res://Scripts/DialogueData.gd"
 SaveManager="*res://Scripts/SaveManager.gd"
 
 [display]

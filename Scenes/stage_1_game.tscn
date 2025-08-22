@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bxg4v3ukq7c3o"]
+[gd_scene load_steps=22 format=3 uid="uid://bxg4v3ukq7c3o"]
 
 [ext_resource type="Script" uid="uid://c5jliy567ijy3" path="res://Scripts/stage_1_game.gd" id="1_gkq8a"]
 [ext_resource type="Script" uid="uid://c3ys33svqgwrn" path="res://Scripts/dialogue_layer.gd" id="2_3img8"]
@@ -9,14 +9,24 @@
 [ext_resource type="Shader" uid="uid://d3or8356cew3t" path="res://Scenes/stage_1_game.gdshader" id="4_f47ab"]
 [ext_resource type="Texture2D" uid="uid://ddk8vfe4s6ljc" path="res://Assets/UI/characters/Marco.png" id="5_40xeg"]
 [ext_resource type="Script" uid="uid://dfik8akd1rejx" path="res://Scripts/dialogue_box.gd" id="6_4jrwm"]
-[ext_resource type="Texture2D" uid="uid://dyyptn0w78slb" path="res://Assets/UI/Stage1GameBackground.png" id="6_chenk"]
 [ext_resource type="PackedScene" uid="uid://b4746akm24qdp" path="res://Scenes/PlayerStats.tscn" id="6_cilap"]
 [ext_resource type="PackedScene" uid="uid://tl1xrbodvq0j" path="res://Scenes/deck.tscn" id="7_chenk"]
 [ext_resource type="PackedScene" uid="uid://cw626ephi65wm" path="res://button.tscn" id="8_40xeg"]
 [ext_resource type="PackedScene" uid="uid://wv5bslnrc75u" path="res://Scenes/run_away.tscn" id="9_3img8"]
+[ext_resource type="PackedScene" uid="uid://c2xdaue5228r6" path="res://Scenes/marco.tscn" id="10_4jrwm"]
+[ext_resource type="Script" uid="uid://dl7apr8btbb3k" path="res://Scripts/game_layer.gd" id="10_ycq0t"]
+[ext_resource type="Script" uid="uid://1365pq6nwtyu" path="res://Scripts/camera_2d.gd" id="16_rokef"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4jrwm"]
 shader = ExtResource("4_f47ab")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jrwm"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
 
 [sub_resource type="Animation" id="Animation_74ohg"]
 resource_name = "Hover"
@@ -84,10 +94,21 @@ flip_h = true
 [node name="DialogueBox" type="RichTextLabel" parent="DialogueLayer1/Vince"]
 visible = false
 offset_left = -146.0
-offset_top = -388.0
+offset_top = -351.0
 offset_right = 282.0
 offset_bottom = -254.0
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_4jrwm")
 script = ExtResource("6_4jrwm")
+
+[node name="NameLabel" type="Label" parent="DialogueLayer1/Vince"]
+visible = false
+offset_left = -146.0
+offset_top = -389.0
+offset_right = -4.0
+offset_bottom = -356.0
+theme_override_font_sizes/font_size = 20
+text = "Vince"
 
 [node name="Lora" type="Sprite2D" parent="DialogueLayer1"]
 texture_filter = 1
@@ -96,12 +117,20 @@ scale = Vector2(0.710692, 0.739962)
 texture = ExtResource("4_40xeg")
 
 [node name="DialogueBox" type="RichTextLabel" parent="DialogueLayer1/Lora"]
-visible = false
 offset_left = -239.0
 offset_top = -462.0
 offset_right = 215.0
 offset_bottom = -279.0
+theme_override_font_sizes/normal_font_size = 20
 script = ExtResource("6_4jrwm")
+
+[node name="NameLabel" type="Label" parent="DialogueLayer1/Lora"]
+offset_left = -239.203
+offset_top = -489.214
+offset_right = -97.2035
+offset_bottom = -461.214
+theme_override_font_sizes/font_size = 20
+text = "Vince"
 
 [node name="Marco" type="Sprite2D" parent="DialogueLayer1"]
 position = Vector2(531, 369)
@@ -114,7 +143,17 @@ offset_left = -129.0
 offset_top = -460.0
 offset_right = 370.0
 offset_bottom = -261.0
+theme_override_font_sizes/normal_font_size = 20
 script = ExtResource("6_4jrwm")
+
+[node name="NameLabel" type="Label" parent="DialogueLayer1/Marco"]
+visible = false
+offset_left = -129.157
+offset_top = -493.864
+offset_right = 12.8427
+offset_bottom = -459.864
+theme_override_font_sizes/font_size = 20
+text = "Vince"
 
 [node name="Mc" type="Sprite2D" parent="DialogueLayer1"]
 
@@ -124,7 +163,17 @@ offset_left = 106.0
 offset_top = 455.0
 offset_right = 966.0
 offset_bottom = 580.0
+theme_override_font_sizes/normal_font_size = 20
 script = ExtResource("6_4jrwm")
+
+[node name="NameLabel" type="Label" parent="DialogueLayer1/Mc"]
+visible = false
+offset_left = 106.0
+offset_top = 414.0
+offset_right = 248.0
+offset_bottom = 442.0
+theme_override_font_sizes/font_size = 20
+text = "Vince"
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueLayer1"]
 position = Vector2(700, 726)
@@ -133,28 +182,38 @@ texture = ExtResource("4_7i4jn")
 
 [node name="GameLayer" type="Node2D" parent="."]
 visible = false
+script = ExtResource("10_ycq0t")
 
-[node name="TextureRect" type="TextureRect" parent="GameLayer"]
-offset_right = 1151.0
+[node name="Background" type="TextureRect" parent="GameLayer"]
+offset_right = 1152.0
 offset_bottom = 647.0
-texture = ExtResource("6_chenk")
+texture = ExtResource("2_t2c8h")
 expand_mode = 1
+
+[node name="Vince" type="Sprite2D" parent="GameLayer"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_4jrwm")
+position = Vector2(178, 363)
+scale = Vector2(0.855392, 0.904207)
+texture = ExtResource("3_7ispb")
+flip_h = true
+
+[node name="Lora" type="Sprite2D" parent="GameLayer"]
+texture_filter = 1
+position = Vector2(971, 375)
+scale = Vector2(0.710692, 0.739962)
+texture = ExtResource("4_40xeg")
+
+[node name="Marco" parent="GameLayer" instance=ExtResource("10_4jrwm")]
+
+[node name="Sprite2D" type="Sprite2D" parent="GameLayer"]
+position = Vector2(700, 726)
+scale = Vector2(0.913396, 0.643765)
+texture = ExtResource("4_7i4jn")
 
 [node name="PlayerStats" parent="GameLayer" instance=ExtResource("6_cilap")]
 offset_right = 45.0
 offset_bottom = 45.0
-
-[node name="Deck" parent="GameLayer" instance=ExtResource("7_chenk")]
-offset_left = 192.0
-offset_top = 365.0
-offset_right = 926.0
-offset_bottom = 595.0
-
-[node name="DeckHover" type="AnimationPlayer" parent="GameLayer/Deck"]
-libraries = {
-&"": SubResource("AnimationLibrary_btved")
-}
-autoplay = "Hover"
 
 [node name="End_turn_button" parent="GameLayer" instance=ExtResource("8_40xeg")]
 offset_left = 1058.0
@@ -167,3 +226,19 @@ offset_left = 1058.0
 offset_top = 534.0
 offset_right = 1153.0
 offset_bottom = 650.0
+
+[node name="Deck" parent="." instance=ExtResource("7_chenk")]
+offset_left = 192.0
+offset_top = 365.0
+offset_right = 926.0
+offset_bottom = 595.0
+
+[node name="DeckHover" type="AnimationPlayer" parent="Deck"]
+libraries = {
+&"": SubResource("AnimationLibrary_btved")
+}
+autoplay = "Hover"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 326)
+script = ExtResource("16_rokef")

@@ -1,7 +1,8 @@
 extends Control
 
 # Custom class reference
-
+var alive_enemies: Array = []
+var has_enemies_in_scene: bool = false
 const SAVE_FILE_PATH := "user://autosave.save"
 @onready var save_timer := Timer.new()
 
@@ -15,8 +16,10 @@ var is_player_turn := true
 var target_scene_path: String = ""
 
 
+
 func _ready() -> void:
-	
+	 # When the scene changes, scan once to see if there are enemies
+
 	
 	print("[PlayerStats] _ready() called - instance id:", self.get_instance_id())
 	print("[GameManager] _ready() called")
@@ -46,6 +49,38 @@ func _ready() -> void:
 	else:
 		print("[GameManager] ❌ health_bar NOT found at _ready()")
 
+func check_player_won() -> void:
+	var scene := get_tree().get_current_scene()
+	if scene == null:
+		return
+
+	# Collect all *alive* enemies recursively
+	var alive_enemies: Array = []
+	_collect_alive_enemies(scene, alive_enemies)
+
+	print("[GameManager] Alive enemies found:", alive_enemies.size())
+
+	if alive_enemies.is_empty():
+		print("[GameManager] ✅ Player won! No enemies left.")
+		get_tree().change_scene_to_file("res://scenes/you_won.tscn")
+
+
+# Recursive helper to collect only alive enemies
+func _collect_alive_enemies(node: Node, enemies: Array) -> void:
+	if node.is_in_group("Enemies") and is_instance_valid(node):
+		# Prefer a proper method on enemies
+		if node.has_method("is_alive"):
+			if node.is_alive():
+				enemies.append(node)
+		# Otherwise fall back to checking hp property directly
+		elif "hp" in node:  # <-- FIX: safe property existence check
+			if node.hp > 0:
+				enemies.append(node)
+
+	for child in node.get_children():
+		_collect_alive_enemies(child, enemies)
+
+
 
 
 func _debug_print_tree(node: Node, indent: int = 0) -> void:
@@ -63,6 +98,7 @@ func change_scene_with_loading(scene_path: String):
 
 
 func _on_scene_changed(new_scene: Node) -> void:
+	UserStats.connect_scene_ui(new_scene)
 	print("[GameManager] Scene changed to:", new_scene.name if new_scene else "null")
 
 	if not new_scene:
@@ -314,3 +350,33 @@ func update_enemies_with_playerstats():
 	for enemy in enemies:
 		if enemy.has_method("set_player_stats"):
 			enemy.set_player_stats(health_bar)
+			
+
+func player_won() -> void:
+	print("[GameManager] 🔍 Checking if player won...")
+
+	# Get all enemies in the "Enemies" group
+	var all_enemies = get_tree().get_nodes_in_group("Enemies")
+	print("[GameManager] Total enemies in group:", all_enemies.size())
+
+	var scene = get_tree().get_current_scene()
+	print("[GameManager] Current scene:", scene.name)
+
+	# Filter only enemies that belong to the current scene
+	var enemies: Array = []
+	for e in all_enemies:
+		if is_instance_valid(e):
+			print(" - Found enemy:", e.name, "| Valid:", is_instance_valid(e), "| In current scene:", scene.is_ancestor_of(e))
+			if scene.is_ancestor_of(e):
+				enemies.append(e)
+
+	print("[GameManager] Enemies still in scene:", enemies.size())
+
+	if enemies.size() == 0:
+		print("[GameManager] ✅ Player won! No enemies left.")
+		get_tree().change_scene("res://scenes/you_won.tscn")
+	else:
+		var names = []
+		for e in enemies:
+			names.append(e.name)
+		print("[GameManager] ❌ Player hasn't won yet. Enemies remaining:", names)
